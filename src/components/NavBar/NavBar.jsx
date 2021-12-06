@@ -4,14 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
+import Logo from '../../assets/img/ijac_logo.png'
+import './NavBar.css'
 
 export const NavBar = () => {
     return (
         <>
 
-            <Navbar fixed="top" bg="light" expand="xxl">
-                <Container>              
-                    <Navbar.Brand href="#home">Logo</Navbar.Brand>
+            <Navbar fixed="top" bg="light" expand="xxl" style={{color: "grey"}} >
+                <Container>
+                    <img src={Logo} alt="Logo" className="logo" style={{height: 50, backgroundColor:"black"}}  />              
+                    {/* <Navbar.Brand href="#home">Logo</Navbar.Brand> */}
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
@@ -28,8 +31,7 @@ export const NavBar = () => {
                         
                     </Navbar.Collapse>
                     <CartWidget />
-                </Container>
-             
+                </Container>      
             </Navbar>
             
 

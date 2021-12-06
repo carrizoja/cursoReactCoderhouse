@@ -20,10 +20,10 @@ const handleRespuesta = () => {
 
     return (
         <div>
-            <h1>{value}</h1>
-            <button onClick={() => handleSuma(1)}>+</button>
-            <button onClick={() => handleResta(1)}>-</button>
-            <button onClick={() => handleRespuesta()}>Agregar al Carrito</button>
+            <h2 style={{color: "black"}}>{value}</h2>
+            <button className="btn btn-outline-primary btn-block" onClick={() => handleSuma(1)}>+</button>
+            <button className="btn btn-outline-primary btn-block" onClick={() => handleResta(1)}>-</button>
+            <button className="btn btn-outline-primary btn-block" onClick={() => handleRespuesta()}>Agregar al Carrito</button>
         </div>
     )
 }
