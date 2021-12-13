@@ -12,25 +12,25 @@ export const NavBar = () => {
     return (
         <>
 
-            <Navbar fixed="top" bg="light" expand="xxl" style={{ color: "grey" }} >
+            <Navbar fixed="top" bg="light" expand="xxl" style={{}} >
                 <Container>
-                    <Link to="/"><img src={Logo} alt="Logo" className="logo" style={{ height: 50, backgroundColor: "black" }} /></Link>
-                    {/* <Navbar.Brand href="#home">Logo</Navbar.Brand> */}
+                    <Link to="/"><img src={Logo} alt="Logo" className="logo" style={{ height: 50 }} /></Link>
+                    <Navbar.Brand href="#home"></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Link className='' to='/'>Inicio</Link>
-                            <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                            <NavDropdown className='dropDown' title="Categorías" id="basic-nav-dropdown">
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/procesadores'>Procesadores</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/motherboards'>Motherboards</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/memorias'>Memorias</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/discos'>Discos</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/placas'>Placas de Video</Link></NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.5">?</NavDropdown.Item>
+                                <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/gabinetes'>Gabinetes</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/fuentes'>Fuentes</Link></NavDropdown.Item>
+                                {/* <NavDropdown.Divider /> */}
+                                {/* <NavDropdown.Item href="#action/3.5">?</NavDropdown.Item> */}
                             </NavDropdown>
                         </Nav>
-
                     </Navbar.Collapse>
                     <Link to="/cart"><CartWidget></CartWidget></Link>
 

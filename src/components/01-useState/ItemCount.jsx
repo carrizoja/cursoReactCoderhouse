@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../01-useState/ItemCount.css'
 
 const ItemCount = (props) => {
 
@@ -19,11 +20,11 @@ const handleRespuesta = () => {
 }
 
     return (
-        <div>
+        <div className='itemCount'>
             <h2 style={{color: "black"}}>{value}</h2>
-            <button className="btn btn-outline-primary btn-block" onClick={() => handleSuma(1)}>+</button>
-            <button className="btn btn-outline-primary btn-block" onClick={() => handleResta(1)}>-</button>
-            <button className="btn btn-outline-primary btn-block" onClick={() => handleRespuesta()}>Agregar al Carrito</button>
+            <button className="btn btn-primary btn-block mas" onClick={() => handleSuma(1)}>+</button>
+            <button className="btn btn-primary btn-block menos" onClick={() => handleResta(1)}>-</button>
+            <button className="btn btn-primary btn-block agregarCarrito" onClick={() => handleRespuesta()}>Agregar al Carrito</button>
         </div>
     )
 }

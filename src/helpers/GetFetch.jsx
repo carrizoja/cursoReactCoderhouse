@@ -4,7 +4,9 @@ const productos = [
   { id: 3, foto: 'https://www.deffo.com.ar/wp-content/uploads/2020/07/WDS100T2B0C-4.jpg', categoria: 'discos', name: "WD M2 1TB", price: 15000 },
   { id: 4, foto: 'https://www.asus.com/media/global/gallery/wzlsdp20wfsur5rr_setting_xxx_0_90_end_800.png', categoria: 'motherboards', name: "Asus TUF Z490 Wifi", price: 25000 },
   { id: 5, foto: 'https://app.contabilium.com/files/explorer/7026/Productos-Servicios/concepto-5037984.png', categoria: 'placas', name: "Gigabyte Geforce 1050Ti", price: 60000 },
-  { id: 6, foto: 'https://images.fravega.com/f500/634670ec36999b1131c2fc49e9c53e58.jpg', categoria: 'discos', name: "Disco Rígido Western Digital Blue 1TB", price: 5200 }
+  { id: 6, foto: 'https://images.fravega.com/f500/634670ec36999b1131c2fc49e9c53e58.jpg', categoria: 'discos', name: "Disco Rígido Western Digital Blue 1TB", price: 5200 },
+  { id: 7, foto: 'https://http2.mlstatic.com/D_NQ_NP_990419-MLA30203508080_052019-O.jpg', categoria: 'gabinetes', name: "Gabinete Sentey Z20", price: 30000 },
+  { id: 8, foto: 'https://http2.mlstatic.com/D_NQ_NP_800160-MLU46342965628_062021-O.jpg', categoria: 'fuentes', name: "Fuente thermaltake Smart 600W", price: 12000}
 ]
 
 

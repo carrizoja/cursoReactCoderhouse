@@ -8,22 +8,20 @@ const ItemDetailContainer = () => {
     
     const {id} = useParams()
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true) 
-    const [item, setItem] = useState({});
-    console.log("item", item);
+    const [loading, setLoading] = useState(true)
     // hacer useEffect como en item listContainer
     useEffect(() => {
 
         if (id) {
             getFetch
-                .then(resp => setItem(resp.filter(prod => prod.id ===  parseInt(id) )))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
+            .then(resp => setProductos(resp.find(prod => prod.id === parseInt(id))))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
         } else {
             getFetch
-                .then(resp => setProductos(resp))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
+            .then(resp => setProductos(resp))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
         }
 
 
@@ -32,15 +30,12 @@ const ItemDetailContainer = () => {
 
     console.log(id)
 
-  /*   useEffect(()=>{
-        getOneProduct.then((res)=> setItem(res)).catch((err)=> console.log(err));
-    }); */
-
     return (
+        
         <div>
-            <h1>Item detail container</h1>
-            <ItemDetail item={item} />
-        </div>
+        <h1>Item detail container</h1>
+        {productos ? <ItemDetail item={productos} /> : 'cargando'}
+    </div>
     );
 
 };

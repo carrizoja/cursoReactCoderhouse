@@ -3,8 +3,7 @@ import ItemCount from '../01-useState/ItemCount'
 import {Link} from 'react-router-dom'  
 
 function Item({ prod }) {
-    const inicial = 1
-    const max = 10
+    
     return (
         <div style={{display: 'flex', flexDirection: 'row'}}
             // La Key identifica a cada componente y cada retorno
@@ -21,12 +20,12 @@ function Item({ prod }) {
                 </div>
                 <div className="card-footer">
                     <Link to={`/detalle/${prod.id}`}>
-                        <button className="btn btn-outline-primary btn-block">
+                        <button className="btn btn-primary btn-block">
                             detalle del producto
                         </button>
                     </Link>
                 </div>
-                <ItemCount inicial={inicial} max={max} />
+              
             </div>
             
         </div>
