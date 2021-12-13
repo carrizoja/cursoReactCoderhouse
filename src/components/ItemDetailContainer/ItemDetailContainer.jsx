@@ -1,14 +1,40 @@
 import { useEffect, useState,  } from "react";
-import getOneProduct from "../../helpers/getOneProduct";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import {useParams} from "react-router-dom";
+import { getFetch } from '../../helpers/GetFetch';
+
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([]);
+    
+    const {id} = useParams()
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true) 
+    const [item, setItem] = useState({});
     console.log("item", item);
+    // hacer useEffect como en item listContainer
+    useEffect(() => {
 
-    useEffect(()=>{
+        if (id) {
+            getFetch
+                .then(resp => setItem(resp.filter(prod => prod.id ===  parseInt(id) )))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        } else {
+            getFetch
+                .then(resp => setProductos(resp))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        }
+
+
+        
+    }, [id])
+
+    console.log(id)
+
+  /*   useEffect(()=>{
         getOneProduct.then((res)=> setItem(res)).catch((err)=> console.log(err));
-    });
+    }); */
 
     return (
         <div>
