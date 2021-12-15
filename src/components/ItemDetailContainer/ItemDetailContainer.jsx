@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-    // hacer useEffect como en item listContainer
+
     useEffect(() => {
 
         if (id) {

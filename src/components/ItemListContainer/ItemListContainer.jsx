@@ -15,20 +15,20 @@ function ItemListContainer({greeting}) {
     // Use Effect para no bloquear los renderizados y mejorar la User Exp 
     useEffect(() => {
 
-       if (idCate) {
+        if (idCate) {
             getFetch
-            .then(resp => setProductos(resp.filter(prod => prod.categoria === idCate)))
-            .catch(err => console.log(err))
-            .finally(()=> setLoading(false))
+                .then(resp => setProductos(resp.filter(prod => prod.categoria === idCate)))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
         } else {
             getFetch
-        .then(resp => setProductos(resp))
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
+                .then(resp => setProductos(resp))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
         }
 
-        
-        
+
+
     }, [idCate])
     
     console.log(idCate)
