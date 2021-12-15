@@ -24,7 +24,6 @@ const ItemDetailContainer = () => {
             .finally(() => setLoading(false))
         }
 
-
         
     }, [id])
 
@@ -33,7 +32,7 @@ const ItemDetailContainer = () => {
     return (
         
         <div>
-        <h1>Item detail container</h1>
+        
         {productos ? <ItemDetail item={productos} /> : 'cargando'}
     </div>
     );
