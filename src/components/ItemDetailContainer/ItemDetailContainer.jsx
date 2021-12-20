@@ -2,6 +2,7 @@ import { useEffect, useState,  } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {useParams} from "react-router-dom";
 import { getFetch } from '../../helpers/GetFetch';
+import "../ItemDetailContainer/ItemDetailContainer.css"
 
 
 const ItemDetailContainer = () => {
@@ -30,11 +31,11 @@ const ItemDetailContainer = () => {
     console.log(id)
 
     return (
-        
+
         <div>
-        
-        {productos ? <ItemDetail item={productos} /> : 'cargando'}
-    </div>
+
+            {productos ? <ItemDetail item={productos} /> : 'cargando'}
+        </div>
     );
 
 };

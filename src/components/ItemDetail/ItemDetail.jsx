@@ -1,16 +1,23 @@
 import ItemCount from "../01-useState/ItemCount";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState} from "react";
 import '../ItemDetail/ItemDetail.css'
+import { useCartContext } from "../../CartContext/CartContext";
+
 
 const ItemDetail = ({item})=>{
 
 const [goCart, setGoCart] = useState(false);
+
+const {cartList, agregarAlCarrito} = useCartContext()
+
 const onAdd = (cantidad) =>{
     
     console.log(cantidad);
     setGoCart(true);
+    agregarAlCarrito({...item,cantidad:cantidad})
 }
+console.log(cartList);
 
     return(
         <div className="flex bg-light">

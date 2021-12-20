@@ -1,16 +1,15 @@
 import React from 'react'
-import ItemCount from '../01-useState/ItemCount'
 import {Link} from 'react-router-dom'  
 
 function Item({ prod }) {
     
     return (
-        <div style={{display: 'flex', flexDirection: 'row'}}
+        <div style={{ display: 'flex', flexDirection: 'row' }}
             // La Key identifica a cada componente y cada retorno
             key={prod.id}
             className='col-md-4 col-sm-6'
         >
-            <div style={{flex:1}} className="card w-100 mt-4" >
+            <div style={{ flex: 1 }} className="card w-100 mt-4" >
                 <div className="card-header" >
                     <h2 style={{ color: "black" }}>{`${prod.name} - ${prod.categoria}`}</h2>
                 </div>
@@ -25,9 +24,9 @@ function Item({ prod }) {
                         </button>
                     </Link>
                 </div>
-              
+
             </div>
-            
+
         </div>
     )
 }
