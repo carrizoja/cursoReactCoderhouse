@@ -1,8 +1,8 @@
 import { useEffect, useState,  } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {useParams} from "react-router-dom";
-import { getFetch } from '../../helpers/GetFetch';
 import "../ItemDetailContainer/ItemDetailContainer.css"
+import {doc,collection, getDocs, getFirestore, getDoc} from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -14,21 +14,30 @@ const ItemDetailContainer = () => {
     useEffect(() => {
 
         if (id) {
-            getFetch
-            .then(resp => setProductos(resp.find(prod => prod.id === parseInt(id))))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+            const db = getFirestore();
+            const queryDb = doc(db, 'items', id)
+            getDoc(queryDb)
+                .then(resp => setProductos({ id: resp.id, ...resp.data() }))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+
         } else {
-            getFetch
-            .then(resp => setProductos(resp))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+            const db = getFirestore();
+            const itemsCollection = collection(db, "items");
+            getDocs(itemsCollection)
+                .then((snapshot) => {
+                    setProductos(snapshot.docs.map((doc) => ({
+                        id: doc.id, ...doc.data()
+                    })))
+
+                })
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+
         }
 
         
     }, [id])
-
-    console.log(id)
 
     return (
 

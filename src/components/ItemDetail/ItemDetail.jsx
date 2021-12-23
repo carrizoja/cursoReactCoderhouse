@@ -24,9 +24,9 @@ console.log(cartList);
             <h3 style={{color: "black"}}>Detalle del item</h3>
             <h3 style={{color: "black"}}>{item.name}</h3>
             <h3 style={{color: "black"}}>${item.price}</h3>
-            <p style={{color: "black"}}>{item.categoria}</p>
-            <img src={`${item.foto}`} alt={`${item.foto}`}></img>
-            <p style={{color: "black"}}>{item.descripcion}</p>
+            <p style={{color: "black"}}>{item.category}</p>
+            <img src={`${item.imageID}`} alt={`${item.imageID}`}></img>
+            <p style={{color: "black"}}>{item.description}</p>
             <div>
             {!goCart ? (
                 <ItemCount stock={item.stock} onAdd={onAdd} />
