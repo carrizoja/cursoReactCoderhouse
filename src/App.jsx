@@ -6,12 +6,13 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './CartContext/CartContext';
-
+import React, { useState } from "react";
 
 function App() {
+  const [qnt, setQnt] = useState(0);
 
   return (
-    <CartContextProvider>
+    <CartContextProvider value={{setQnt}}>
        <BrowserRouter>
       <div className="App">
         <header className="App-header">

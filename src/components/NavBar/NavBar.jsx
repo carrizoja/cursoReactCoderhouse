@@ -7,9 +7,30 @@ import CartWidget from './CartWidget';
 import Logo from '../../assets/img/ijac_logo.png'
 import './NavBar.css'
 import { Link} from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+import {useCartContext } from '../../CartContext/CartContext'
+import { useState, useEffect } from 'react';
+
 
 export const NavBar = () => {
+    const { cartList } = useCartContext();
+	const [ units, setUnits ] = useState(0);
+
+	const countItems = function(data){
+		let counter = 0;
+		cartList.map((item) => {
+			counter += item.cantidad;
+		});
+		return counter;
+	}
+
+	useEffect(() => {
+
+		setUnits(countItems);
+
+	}, [cartList])
     return (
+        
         <>
 
             <Navbar fixed="top" bg="light" expand="xxl" style={{}} >
@@ -27,13 +48,11 @@ export const NavBar = () => {
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/placas'>Placas de Video</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/gabinetes'>Gabinetes</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link style={{textDecoration:"none", color: "black"}} className='' to='/categoria/fuentes'>Fuentes</Link></NavDropdown.Item>
-                                {/* <NavDropdown.Divider /> */}
-                                {/* <NavDropdown.Item href="#action/3.5">?</NavDropdown.Item> */}
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-                    <Link to="/cart"><CartWidget></CartWidget></Link>
-
+                    <Link to="/cart"><Badge badgeContent={units} color="secondary"><CartWidget></CartWidget></Badge></Link>
+                               
                 </Container>
             </Navbar>
 
