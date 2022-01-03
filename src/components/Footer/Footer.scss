@@ -1,0 +1,37 @@
+footer {
+    background-color: #252527;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 25vh;
+    .social {
+        padding-top: 20px;
+        a {
+            .social-icons {
+                color: #2f6d88;
+            }
+        }
+        &-github {
+            margin-right: 50px;
+        }
+        &-linkedin {
+            margin-left: 50px;
+        }
+        &-facebook {
+            margin-left: 100px;
+        }
+        &-instagram {
+            margin-left: 100px;
+        }
+    }
+    .copyright {
+        text-align: center;
+        color: white;
+        padding: 40px 0px 20px;
+        font-size: 18px;
+        a {
+            text-decoration: none;
+        }
+    }
+}

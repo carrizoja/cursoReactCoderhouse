@@ -1,3 +1,14 @@
 .irAlCarrito {
     margin-bottom: 1%;
 }
+
+.itemDetailContainer {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    box-sizing: 1px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px 4px rgb(33, 124, 243);
+}

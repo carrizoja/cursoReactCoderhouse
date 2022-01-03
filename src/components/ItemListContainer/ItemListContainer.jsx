@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
-
+import Spinner from 'react-bootstrap/Spinner'
 
 
 function ItemListContainer({greeting}) {
@@ -46,14 +46,19 @@ function ItemListContainer({greeting}) {
     
     return (
         <>
-            
+
             {loading ?
-                <h2>cargando...</h2>
-                
-                
+
+                (
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                )
+
+
                 :
                 <ItemList productos={productos} />
-                
+
             }
 
         </>

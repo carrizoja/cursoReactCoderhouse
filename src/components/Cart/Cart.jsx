@@ -1,8 +1,9 @@
-import {useCartContext } from '../../CartContext/CartContext'
+import {useCartContext } from '../CartContext/CartContext.jsx'
 import ItemCount from "../01-useState/ItemCount";
 import { Link } from "react-router-dom";
 import React, { useEffect} from "react";
-import Table from '../../Table/Table.jsx'
+import Table from '../Table/Table.jsx'
+import '../Cart/Cart.scss'
 
 function Cart() {
 
@@ -35,15 +36,7 @@ function Cart() {
             messageConditional :
         <div> 
             <Table></Table>          
-           {/*  {cartList.map(prod => <div key={prod.id} className="card w-100 mt-4">
-                <h2 style={{color: "black"}}>{prod.name}</h2>              
-                <img src={`${prod.imageID}`} alt='' className='w-50'></img>
-                <h2 style={{color: "black"}}>Cantidad: {prod.cantidad}</h2>
-                <h2 style={{color: "black"}}>Subtotal: {prod.cantidad * prod.quantity}</h2>
-                <ItemCount></ItemCount>
-            </div>)} */}
-
-            {/* <button className="btn btn-primary btn-block borrarCarrito" onClick={borrarCarrito}>Vaciar Carrito</button>  */}                
+                         
         </div>
         }
         </div>

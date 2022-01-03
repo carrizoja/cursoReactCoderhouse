@@ -1,8 +1,8 @@
 import { useEffect, useState,  } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {useParams} from "react-router-dom";
-import "../ItemDetailContainer/ItemDetailContainer.css"
 import {doc,collection, getDocs, getFirestore, getDoc} from 'firebase/firestore'
+import Spinner from 'react-bootstrap/Spinner'
 
 
 const ItemDetailContainer = () => {
@@ -41,9 +41,16 @@ const ItemDetailContainer = () => {
 
     return (
 
-        <div>
+        <div className="itemDetailContainer">
 
-            {productos ? <ItemDetail item={productos} /> : 'cargando'}
+            {loading ?
+                (
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                )
+                : <ItemDetail item={productos} />
+            }
         </div>
     );
 

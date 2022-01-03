@@ -8,7 +8,7 @@ import Logo from '../../assets/img/ijac_logo.png'
 import './NavBar.css'
 import { Link} from 'react-router-dom';
 import Badge from '@mui/material/Badge';
-import {useCartContext } from '../../CartContext/CartContext'
+import {useCartContext } from '../CartContext/CartContext.jsx'
 import { useState, useEffect } from 'react';
 
 

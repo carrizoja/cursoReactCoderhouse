@@ -1,15 +1,13 @@
-import {useCartContext } from '../CartContext/CartContext.jsx'
 import React from 'react'
-import { useEffect} from "react";
-
-
+import {useCartContext } from '../CartContext/CartContext.jsx'
+import '../Table/Table.scss'
 
 const Table = () => {
     const { cartList, borrarCarrito, deleteItem, totalPrice } = useCartContext()
 
     console.log(totalPrice);
     return (
-        <div>
+        <div className='tableContenedor'>
             <div className="table-data" style={{backgroundColor: "white"}}>
                 <div className="table-data__title">
                     <h1>Carrito</h1>

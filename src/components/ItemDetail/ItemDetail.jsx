@@ -2,8 +2,7 @@ import ItemCount from "../01-useState/ItemCount";
 import { Link } from "react-router-dom";
 import { useState} from "react";
 import '../ItemDetail/ItemDetail.css'
-import { useCartContext } from "../../CartContext/CartContext";
-
+import {useCartContext } from '../CartContext/CartContext.jsx'
 
 const ItemDetail = ({item})=>{
 
@@ -20,10 +19,10 @@ const onAdd = (cantidad) =>{
 console.log(cartList);
 
     return(
-        <div className="flex bg-light">
+        <div className="flex bg-light itemDetailContainer">
             <h3 style={{color: "black"}}>Detalle del item</h3>
             <h3 style={{color: "black"}}>{item.name}</h3>
-            <h3 style={{color: "black"}}>${item.price}</h3>
+            <h3 style={{color: "black"}}>${item.price}.-</h3>
             <p style={{color: "black"}}>{item.category}</p>
             <img src={`${item.imageID}`} alt={`${item.imageID}`}></img>
             <p style={{color: "black"}}>{item.description}</p>
