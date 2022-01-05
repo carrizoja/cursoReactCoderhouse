@@ -8,12 +8,15 @@ import Cart from './components/Cart/Cart';
 import CartContextProvider from './components/CartContext/CartContext';
 import React, { useState } from "react";
 import Footer from '../src/components/Footer/Footer.jsx'
+import Form from './pages/Form/Form.jsx'
+
 
 function App() {
   const [qnt, setQnt] = useState(0);
+  const [cartList, setCartList] = useState([]);
 
   return (
-    <CartContextProvider value={{setQnt}}>
+    <CartContextProvider value={{setQnt, cartList, setCartList}}>
        <BrowserRouter>
       <div className="App">
         <header className="App-header">
@@ -34,6 +37,9 @@ function App() {
             />
             <Route
               exact path="/cart" element={<Cart />}
+            />
+            <Route exact path="/form"
+              element={<Form />}
             />
           </Routes>       
         </header>

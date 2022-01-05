@@ -1,9 +1,9 @@
 import {useCartContext } from '../CartContext/CartContext.jsx'
-import ItemCount from "../01-useState/ItemCount";
 import { Link } from "react-router-dom";
-import React, { useEffect} from "react";
+import React from "react";
 import Table from '../Table/Table.jsx'
 import '../Cart/Cart.scss'
+import Checkout from '../Checkout/Checkout.jsx';
 
 function Cart() {
 
@@ -35,7 +35,8 @@ function Cart() {
         {cartList.length === 0 ? 
             messageConditional :
         <div> 
-            <Table></Table>          
+            <Table></Table> 
+            <Checkout />         
                          
         </div>
         }

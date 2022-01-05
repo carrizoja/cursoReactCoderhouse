@@ -1,6 +1,7 @@
 import React from 'react'
 import {useCartContext } from '../CartContext/CartContext.jsx'
 import '../Table/Table.scss'
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 const Table = () => {
     const { cartList, borrarCarrito, deleteItem, totalPrice } = useCartContext()
@@ -35,8 +36,8 @@ const Table = () => {
                                     <button
                                         className="btn btn-danger"
                                         onClick={() => deleteItem(item.id)}
-                                    >
-                                        X
+                                    ><DeleteRoundedIcon />
+                                        
                                     </button>
                                 </td>
                             </tr>
@@ -44,7 +45,7 @@ const Table = () => {
                     </tbody>                
                 </table>
                 <h1 style={{color: "black"}}>Total: ${totalPrice()}</h1>
-                <button className="btn btn-primary btn-block borrarCarrito" onClick={borrarCarrito}>Vaciar Carrito</button>
+                <button className="btn btn-danger btn-block borrarCarrito" onClick={borrarCarrito}>Vaciar Carrito</button>
             </div>
         </div>
 
