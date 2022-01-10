@@ -55,6 +55,6 @@ En el archivo `.env.example` estan las variables que deben ir para poder llenarl
 ![image06](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
 ![image07](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
 
-## VIDEO
-Hacé click [ACA]() para ver un video de demostración del proceso de compra de la app.
+## VIDEO simulación compra
+https://res.cloudinary.com/ijac-it-solutions/video/upload/v1641842306/screenshots%20ecommerce/videoEcommerce_hzr04f.mp4
 
