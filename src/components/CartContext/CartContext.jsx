@@ -7,13 +7,14 @@ export const useCartContext = () => useContext(CartContext)
 function CartContextProvider({ children }) {
     
     const [cartList, setCartList] = useState([])
-    
-    function agregarAlCarrito(item){
+
+     
+    function addToShoppingCart(item){
         const index = cartList.findIndex(i => i.id === item.id)
         if (index > -1){
-            const cantAntigua = cartList[index].cantidad
+            const oldQuantity = cartList[index].quantity
             cartList.splice(index, 1)
-            setCartList([...cartList, {...item, cantidad: item.cantidad + cantAntigua}])
+            setCartList([...cartList, {...item, quantity: item.quantity + oldQuantity}])
         } else {
             setCartList([...cartList, item])
         }
@@ -25,21 +26,23 @@ function CartContextProvider({ children }) {
    }
 
    const totalPrice = () => {
-    return cartList.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0)    }
+    return cartList.reduce((acc, prod) => acc + prod.price * prod.quantity, 0)    }
 
-    function borrarCarrito(){
+    function deleteShoppingCart(){
         setCartList([])
     }
+
+
 
     return (
 
         // Se crea acá para enmascarar
         <CartContext.Provider value={{
             cartList,
-            agregarAlCarrito,
-            borrarCarrito,
+            addToShoppingCart,
+            deleteShoppingCart,
             deleteItem,
-            totalPrice
+            totalPrice,
         }}>
             {children}
         </CartContext.Provider>

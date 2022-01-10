@@ -3,35 +3,33 @@ import { Link } from "react-router-dom";
 import { useState} from "react";
 import '../ItemDetail/ItemDetail.css'
 import {useCartContext } from '../CartContext/CartContext.jsx'
+import React from 'react'
 
 const ItemDetail = ({item})=>{
 
 const [goCart, setGoCart] = useState(false);
 
-const {cartList, agregarAlCarrito} = useCartContext()
+const {addToShoppingCart} = useCartContext()
 
-const onAdd = (cantidad) =>{
-    
-    console.log(cantidad);
+const onAdd = (quantity) =>{
     setGoCart(true);
-    agregarAlCarrito({...item,cantidad:cantidad})
+    addToShoppingCart({...item,quantity:quantity})
 }
-console.log(cartList);
 
     return(
         <div className="flex bg-light itemDetailContainer">
-            <h3 style={{color: "black"}}>Detalle del item</h3>
-            <h3 style={{color: "black"}}>{item.name}</h3>
-            <h3 style={{color: "black"}}>${item.price}.-</h3>
-            <p style={{color: "black"}}>{item.category}</p>
-            <img src={`${item.imageID}`} alt={`${item.imageID}`}></img>
-            <p style={{color: "black"}}>{item.description}</p>
+            <h3>{item.name}</h3>
+            <h3>${item.price}.-</h3>
+            <p>{item.category}</p>
+            <img className="imageItemDetail" src={`${item.imageID}`} alt={`${item.imageID}`}></img>
+            <p>{item.description}</p>
             <div>
             {!goCart ? (
                 <ItemCount stock={item.stock} onAdd={onAdd} />
-            ):(
-                <Link to="/cart"><button className="btn btn-success btn-block irAlCarrito">Ir al Carrito</button></Link>
-                
+            ):(<React.Fragment>
+                 <Link to="/cart"><button className="btn btn-success btn-block irAlCarrito">Ir al Carrito</button></Link>
+                <Link to="/"><button className="btn btn-primary seguirComprando">Seguir Comprando</button></Link>
+            </React.Fragment>            
             )}
             
             </div>

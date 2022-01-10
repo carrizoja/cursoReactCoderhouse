@@ -4,12 +4,11 @@ import '../Table/Table.scss'
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 const Table = () => {
-    const { cartList, borrarCarrito, deleteItem, totalPrice } = useCartContext()
+    const { cartList, deleteShoppingCart, deleteItem, totalPrice } = useCartContext()
 
-    console.log(totalPrice);
     return (
-        <div className='tableContenedor'>
-            <div className="table-data" style={{backgroundColor: "white"}}>
+        <div className='tableContainer'>
+            <div className="table-data">
                 <div className="table-data__title">
                     <h1>Carrito</h1>
                 </div>
@@ -27,11 +26,11 @@ const Table = () => {
                     <tbody>
                         {cartList.map((item, index) => (
                             <tr key={index}>
-                                <th><img src={`${item.imageID}`} alt='' className='w-50'></img></th>
-                                <th scope="row">{item.cantidad}</th>
+                                <th><img src={`${item.imageID}`} alt='' className='w-50 tableImage'></img></th>
+                                <th scope="row">{item.quantity}</th>
                                 <td>{item.name}</td>
                                 <td>${item.price}</td>
-                                <td>${item.cantidad * item.price}</td>
+                                <td>${item.quantity * item.price}</td>
                                 <td>
                                     <button
                                         className="btn btn-danger"
@@ -45,7 +44,7 @@ const Table = () => {
                     </tbody>                
                 </table>
                 <h1 style={{color: "black"}}>Total: ${totalPrice()}</h1>
-                <button className="btn btn-danger btn-block borrarCarrito" onClick={borrarCarrito}>Vaciar Carrito</button>
+                <button className="btn btn-danger btn-block deleteShoppingCart" onClick={deleteShoppingCart}>Vaciar Carrito</button>
             </div>
         </div>
 

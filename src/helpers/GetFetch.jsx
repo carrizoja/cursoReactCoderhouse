@@ -1,4 +1,4 @@
-const productos = [
+const products = [
   { id: 1, foto: 'https://res.cloudinary.com/ijac-it-solutions/image/upload/v1639592180/img/intel_i9_11th_rkievv.jpg', categoria: 'procesadores', name: "Micro i9", price: 80000, stock: 20, descripcion: "ESPECIFICACIONES TECNICAS - Marca: Intel- Modelo: BX8070811900K- Tipos de memoria RAM soportadas DDR4- Tamaño máximo de memoria RAM soportada 128 GB- Caché 16 MB- Zócalos compatibles FCLGA1200- Arquitectura x64- Aplicación Computadoras de escritorio- Procesador gráfico Intel UHD Graphics 750- Cantidad de núcleos de CPU 8- Es gamer Sí- Está desbloqueado Sí- Frecuencia mínima de reloj 3 GHz- Frecuencia máxima de reloj 5 GHz" },
   { id: 2, foto: 'https://res.cloudinary.com/ijac-it-solutions/image/upload/v1639591756/img/crucial_vegeance_iywazh.jpg', categoria: 'memorias', name: "Crucial 32GB DDR4 3000Mhz", price: 20000, stock: 20, descripcion: "Con diseños únicos y modernos, Corsair es una de las marcas más elegidas por los usuarios al momento de comprar una memoria ram. Cargar programas más rápido, aumentar la capacidad de responder y ejecutar aplicaciones de uso intensivo son algunas de las características y ventajas que tendrás al momento de adquirir esta memoria." },
   { id: 3, foto: 'https://res.cloudinary.com/ijac-it-solutions/image/upload/v1639592787/img/ssd_1tb_wd_xzsk8s.jpg', categoria: 'discos', name: "Western Digital M2 1TB", price: 15000, stock: 15, descripcion: "Western Digital es una marca de renombre mundial en almacenamiento de datos con la cual podés crear, experimentar y guardar contenidos a través de una amplia gama de dispositivos. La alta seguridad y rendimiento que brindan sus unidades la convierten en una de las empresas más elegidas del mercado. El WD Blue SN550 WDS100T2B0C está adaptado para que puedas acceder de forma rápida a tus documentos digitales gracias a su tecnología en estado sólido." },
@@ -14,7 +14,7 @@ const productos = [
 export const getFetch = new Promise((resolve) =>{
     // acciones que pueden ser asincrónicas o no setTime
     setTimeout(()=>{
-        resolve(productos)
+        resolve(products)
     }, 3000)
     
 }) // Instanciar el objeto

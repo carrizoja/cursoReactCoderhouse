@@ -16,26 +16,26 @@ export const NavBar = () => {
     const { cartList } = useCartContext();
 	const [ units, setUnits ] = useState(0);
 
-	const countItems = function(data){
-		let counter = 0;
-		cartList.map((item) => {
-			counter += item.cantidad;
-		});
-		return counter;
-	}
-
+    // Se calcula la cantidad de ítems del Carrito
 	useEffect(() => {
 
-		setUnits(countItems);
+        function countItems(){
+            let counter = 0;
+            cartList.forEach(item => {
+                counter += item.quantity;
+            });
+            return counter;
+        }
+		setUnits(countItems());
 
 	}, [cartList])
     return (
         
         <>
 
-            <Navbar fixed="top" bg="light" expand="xxl" style={{}} >
+            <Navbar fixed="top" bg="light" expand="xxl">
                 <Container>
-                    <Link to="/"><img src={Logo} alt="Logo" className="logo" style={{ height: 50 }} /></Link>
+                    <Link to="/"><img src={Logo} alt="Logo" className="logo"/></Link>
                     <Navbar.Brand href="#home"></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import {useCartContext } from '../CartContext/CartContext.jsx'
 
@@ -12,7 +12,7 @@ const Checkout = () => {
         if (cartList.length > 0) {
             setTotalPrice(
                 cartList
-                    .map((product) => product.price * product.cantidad)
+                    .map((product) => product.price * product.quantity)
                     .reduce((total, valor) => total + valor)
             );
         }

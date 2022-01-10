@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner'
 const ItemDetailContainer = () => {
     
     const {id} = useParams()
-    const [productos, setProductos] = useState([])
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
             const db = getFirestore();
             const queryDb = doc(db, 'items', id)
             getDoc(queryDb)
-                .then(resp => setProductos({ id: resp.id, ...resp.data() }))
+                .then(resp => setProducts({ id: resp.id, ...resp.data() }))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
 
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
             const itemsCollection = collection(db, "items");
             getDocs(itemsCollection)
                 .then((snapshot) => {
-                    setProductos(snapshot.docs.map((doc) => ({
+                    setProducts(snapshot.docs.map((doc) => ({
                         id: doc.id, ...doc.data()
                     })))
 
@@ -49,7 +49,7 @@ const ItemDetailContainer = () => {
                         <span className="visually-hidden">Loading...</span>
                     </Spinner>
                 )
-                : <ItemDetail item={productos} />
+                : <ItemDetail item={products} />
             }
         </div>
     );

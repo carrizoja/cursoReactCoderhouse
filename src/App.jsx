@@ -9,18 +9,20 @@ import CartContextProvider from './components/CartContext/CartContext';
 import React, { useState } from "react";
 import Footer from '../src/components/Footer/Footer.jsx'
 import Form from './pages/Form/Form.jsx'
+import CarouselEcommerce from './components/Carousel/CarouselEcommerce';
 
 
 function App() {
-  const [qnt, setQnt] = useState(0);
+  
   const [cartList, setCartList] = useState([]);
 
   return (
-    <CartContextProvider value={{setQnt, cartList, setCartList}}>
+    <CartContextProvider value={{cartList, setCartList}}>
        <BrowserRouter>
       <div className="App">
         <header className="App-header">
           <NavBar />
+          <CarouselEcommerce></CarouselEcommerce>
           <br />
           <Routes>
             <Route

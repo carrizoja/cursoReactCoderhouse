@@ -1,12 +1,11 @@
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import Spinner from 'react-bootstrap/Spinner'
 
-
-function ItemListContainer({greeting}) {
-    const [productos, setProductos] = useState([])
+function ItemListContainer() {
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     // Destructuring
@@ -20,7 +19,7 @@ function ItemListContainer({greeting}) {
             const q = query(collection(db, "items"), where("category", "==", idCate));
             getDocs(q)
                 .then((snapshot) => {
-                    setProductos(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+                    setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
                 })
                 .catch(error => console.log(error))
                 .finally(() => setLoading(false))
@@ -30,7 +29,7 @@ function ItemListContainer({greeting}) {
             const itemsCollection = collection(db, "items");
             getDocs(itemsCollection)
                 .then((snapshot) => {
-                    setProductos(snapshot.docs.map((doc) => ({
+                    setProducts(snapshot.docs.map((doc) => ({
                         id: doc.id, ...doc.data()
                     })))
 
@@ -57,7 +56,13 @@ function ItemListContainer({greeting}) {
 
 
                 :
-                <ItemList productos={productos} />
+                (<React.Fragment>
+                    
+                    <ItemList products={products} />
+                </React.Fragment>   
+                    
+                )
+                
 
             }
 
