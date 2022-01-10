@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# iJac IT Solutions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción 
 
-## Available Scripts
+`Proyecto Final` para el curso de ReactJS de la academia `Coder House` (2021 - Camada 19780).
+La aplicación se conecta a un backend realizado con `Firebase`.
+Permite seleccionar ciertos productos informáticos, navegar a sus detalles, agregarlos al carrito, poder acceder a él, simular la compra de los productos.
+Al clickear sobre el botón "realizar compra", pide llenar un formulario con datos básicos y, luego de confirmar,
+se genera un id de orden para el usuario y en firebase se guarda la orden con los productos que compró.
 
-In the project directory, you can run:
+**Tecnologías y librerías utilizadas:**
+
+- Interfaz realizada con **ReactJS V17.0.2 - Create React App**
+- Estilos con **React Bootstrap V2.0.2**, **Material-UI Core V4.12.3** y preprocesador **Node Sass V6.0.1**
+- Ruteo con **React Router Dom V6.2.1**
+- Backend con **Firebase V9.6.1**
+
+## Descargar y correr el proyecto
+
+Una vez clonado o descargado el proyecto, instalar dependencias:
+
+### `npm install`
+
+Correr el servidor:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Se abre una pestaña del navegador en el puerto 3000:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Sino copiar esta URL y pegarla en el navegador: `http://localhost:3000`
 
-### `npm test`
+## Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Recordar que tiene un backend realizado con Firebase, por si quieren descargar y correr este proyecto, tienen que generar su backend en firebase sino local con data fake.
+En el archivo `.env.example` estan las variables que deben ir para poder llenarlas con sus datos de Firebase.
 
-### `npm run build`
+## Estructura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![estructura](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840729/screenshots%20ecommerce/estructuraEcommerce_sqn0ir.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ScreenShots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Menú Principal
+![image00](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840159/screenshots%20ecommerce/ecommerce1_uijnsd.png)
+## Detalle del Producto
+![image01](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840163/screenshots%20ecommerce/ecommerce2_jq4gaw.png)
+## Carrito
+![image02](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
+## Formulario de orden
+![image03](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840336/screenshots%20ecommerce/ecommerce4_nqgoqs.png)
+## Orden satisfactoria
+![image04](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840338/screenshots%20ecommerce/ecommerce5_nydykl.png)
+## Prueba de actualización de Stock
+![image05](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
+![image06](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
+![image07](https://res.cloudinary.com/ijac-it-solutions/image/upload/v1641840333/screenshots%20ecommerce/ecommerce3_q7pj9i.png)
 
-### `npm run eject`
+## VIDEO
+Hacé click [ACA]() para ver un video de demostración del proceso de compra de la app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
